@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="securityObject">
+    {{securityObject | json}}
+  </div>
+  <div 
+  *ngIf="securityObject && !securityObject.isAuthenticated">
+    <p>Invalid User Name | Password.</p>
+  </div>
+  
+  <form>
+    <ion-item>
+      <ion-input id="username" name="username" 
+        [(ngModel)]="user.userName" 
+        required type="text" placeholder="User Name">
+      </ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input id="password" name="password" 
+        [(ngModel)]="user.password" 
+        required type="password" placeholder="Password">
+      </ion-input>
+    </ion-item>
+  
+    <ion-button (click)="login()"
+      shape="round" color="primary" fill="outline">
+        Login
+    </ion-button>
+  </form>
+
+</ion-content>

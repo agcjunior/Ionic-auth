@@ -1,0 +1,11 @@
+{
+  "name": "authjwt",
+  "integrations": {},
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://localhost:5001/api"
+    }
+  ]
+}
